@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<style>
+#panel, #flip {
+    padding: 5x;
+    text-align: center;
+    background-color: #e5eecc;
+    border: solid 1px #c3c3c3;
+}
+
+#panel {
+    padding: 50px;
+    display: none;
+}
+</style>
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Assignment3 - Task1</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+<script type="text/javascript">
+function myFunction(){
+		
+			var message = prompt("Please enter a temparature unit(1:To convert into celcius, 2:To convert into fahrenheit)");
+	
+			switch(message){
+				
+				case '1': 
+						var value = prompt("Please enter a fahrenheit temparature value to be converted to celcius");
+						celcius(value);
+						break;
+				
+				case '2': 
+						var value2 = prompt("Please enter a celcius temparature value to be converted to fahrenheit");
+						fahrenheit(value2);
+						break;
+				
+				default:
+						alert("Selection is not valid. Please try again");
+			}
+		}
+		
+		function celcius(value){
+			
+			var fahrenheit = value;
+			var celcius;
+			
+			celcius = (fahrenheit - 32) * 5/9;
+			
+			alert(fahrenheit+"°F converted to celcius is "+celcius+"°C");
+		
+		}
+		
+		function fahrenheit(value2){
+		
+			var celcius = value2;
+			var fahrenheit;
+			
+			fahrenheit = celcius * 9/5 + 32;
+			
+			alert(celcius+"°C converted to fahrenheit is "+fahrenheit+"°F");
+		
+		}
+</script>
+</head>
+
+	
+
+<body>
+<h3>Assignment3-Part1 - Temperature Conversion</h3>
+    <div id="flip">Temperature Conversion</div>
+    <div id="panel">This program converts from Celsius to Fahrenheit and vice versa</div>
+    <script>
+			
+			$("#flip").click( function() {
+				$("#panel").slideDown(); 
+			});
+				
+			$("#flip").dblclick( function() {
+				$("#panel").slideUp(); 
+			});
+	
+	</script>
+	
+    <table>      
+        	<tr>
+			    <td><input  name="btnConvert" id="btnConvert" value="Convert!" type="button" onclick="myFunction()"></td>
+		    </tr>       
+   </table>
+</body>
+</html>
